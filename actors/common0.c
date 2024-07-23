@@ -110,3 +110,4 @@ UNUSED static const u64 binid_18 = 18;
 #include "goomba_crem/model.inc.c"
 #include "goomba_crem/anims/data.inc.c"
 #include "goomba_crem/anims/table.inc.c"
+#include "amy_nude/model.inc.c"

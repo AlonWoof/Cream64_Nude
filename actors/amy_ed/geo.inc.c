@@ -7,7 +7,7 @@ const GeoLayout amy_ed_geo[] = {
 		GEO_OPEN_NODE(),
 			GEO_SCALE(LAYER_OPAQUE, 8520),
 			GEO_OPEN_NODE(),
-				GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 587, 0, amy_ed_Root_mesh_layer_1),
+				GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, amy_ed_Root_mesh_layer_1),
 				GEO_OPEN_NODE(),
 					GEO_DISPLAY_LIST(LAYER_OPAQUE, amy_ed_Chest_skinned_mesh_layer_1),
 					GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 106, 0, amy_ed_Chest_mesh_layer_1),

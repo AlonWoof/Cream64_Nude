@@ -298,7 +298,7 @@ endif
 
 DEFINES += $(VER_DEFINES)
 
-TARGET := sm64.$(VERSION).$(GRUCODE)
+TARGET := sc64.$(VERSION).$(GRUCODE)
 
 # GRUCODE - selects which RSP microcode to use.
 #   f3d_old - First version the Fast3D (Originally in JP - US)

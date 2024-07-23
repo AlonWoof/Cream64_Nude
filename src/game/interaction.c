@@ -729,6 +729,9 @@ u32 take_damage_and_knock_back(struct MarioState *m, struct Object *o) {
         o->oInteractStatus = INT_STATUS_INTERACTED | INT_STATUS_ATTACKED_MARIO;
         m->interactObj = o;
 
+        #ifdef HARDCORE_BUN
+            return set_mario_action(m, ACT_EXPLODE_DEATH, 0);
+        #endif
         damage = take_damage_from_interact_object(m);
 
         if (o->oInteractionSubtype & INT_SUBTYPE_BIG_KNOCKBACK) {

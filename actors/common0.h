@@ -243,4 +243,6 @@ extern const Collision unknown_seg8_collision_080262F8[];
 
 
 #include "goomba_crem/anim_header.h"
+#include "amy_nude/geo_header.h"
+
 #endif

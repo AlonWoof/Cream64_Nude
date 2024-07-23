@@ -17,6 +17,10 @@
 #include "extras/cheats.h"
 #endif
 
+#include "engine/behavior_script.h"
+#include "behavior_actions.h"
+#include "behavior_data.h"
+
 void play_flip_sounds(struct MarioState *m, s16 frame1, s16 frame2, s16 frame3) {
     s32 animFrame = m->marioObj->header.gfx.animInfo.animFrame;
     if (animFrame == frame1 || animFrame == frame2 || animFrame == frame3) {
@@ -132,16 +136,40 @@ s32 check_fall_damage(struct MarioState *m, u32 hardFallAction) {
 #if FALL_DAMAGE
     if (m->action != ACT_TWIRLING && m->floor->type != SURFACE_BURNING) {
         if (m->vel[1] < -55.0f) {
-            if (fallHeight > 3000.0f) {
-                m->hurtCounter += (m->flags & MARIO_CAP_ON_HEAD) ? 16 : 24;
+
+
+
+
+            if (fallHeight > 3000.0f) 
+            {
+
+                #ifdef HARDCORE_BUN
+                if(!(m->flags & MARIO_METAL_CAP))
+                { 
+                    return set_mario_action(m, ACT_EXPLODE_DEATH, 0);
+                }
+                #endif
+
+                m->hurtCounter += 24;
 #ifdef RUMBLE_FEEDBACK
                 queue_rumble_data(5, 80);
 #endif
                 set_camera_shake_from_hit(SHAKE_FALL_DAMAGE);
                 play_sound(SOUND_MARIO_ATTACKED, m->marioObj->header.gfx.cameraToObject);
                 return drop_and_set_mario_action(m, hardFallAction, 4);
-            } else if (fallHeight > damageHeight && !mario_floor_is_slippery(m)) {
-                m->hurtCounter += (m->flags & MARIO_CAP_ON_HEAD) ? 8 : 12;
+            } else if (fallHeight > damageHeight && !mario_floor_is_slippery(m)) 
+            {
+
+                
+                #ifdef HARDCORE_BUN
+                if(!(m->flags & MARIO_METAL_CAP))
+                { 
+                    return set_mario_action(m, ACT_EXPLODE_DEATH, 0);
+                }
+                #endif
+
+
+                m->hurtCounter += 12;
                 m->squishTimer = 30;
 #ifdef RUMBLE_FEEDBACK
                 queue_rumble_data(5, 80);
@@ -540,15 +568,9 @@ s32 act_hovering(struct MarioState *m)
 {
 	u16 max_stamina = 60;
 
-    switch (gMarioState->currentCostume) {
-            case 25: m->particleFlags |= PARTICLE_SPARKLES;
-            case 49: m->particleFlags |= PARTICLE_SPARKLES;
-            default: ;
-        }
-
 	//Only when A is being held.
 	if((m->controller->buttonDown & A_BUTTON) && m->flyStamina < max_stamina)
-	{   
+	{
 
 			float offset = (sin(((double)gGlobalTimer * 0.1f)));
 			m->vel[1] = offset;
@@ -610,6 +632,15 @@ s32 act_hovering(struct MarioState *m)
 
 
 s32 act_jump(struct MarioState *m) {
+#if EASIER_LONG_JUMPS
+    if (m->actionTimer < 1) {
+        m->actionTimer++;
+        if (m->input & INPUT_Z_PRESSED && m->forwardVel > 10.0f) {
+            return set_jumping_action(m, ACT_LONG_JUMP, 0);
+        }
+    }
+#endif
+
     if (check_kick_or_dive_in_air(m)) {
         return TRUE;
     }
@@ -1762,7 +1793,39 @@ s32 act_hold_butt_slide_air(struct MarioState *m) {
     return FALSE;
 }
 
-s32 act_lava_boost(struct MarioState *m) {
+s32 act_explode_death(struct MarioState * m)
+{
+
+    if(!m->marioObj->unused2)
+    {
+    	//m->marioObj->unused2 = 0;
+        play_sound_if_no_flag(m, SOUND_MARIO_ATTACKED, MARIO_MARIO_SOUND_PLAYED);
+    	struct Object *explosion;
+		explosion = spawn_object(m->marioObj, MODEL_EXPLOSION,  bhvExplosion);
+		//explosion->oGraphYOffset += 50.0f;
+    }
+
+    m->health = 0;
+	m->marioObj->header.gfx.node.flags &= ~GRAPH_RENDER_ACTIVE;
+
+    m->marioObj->unused2++;
+
+    if(m->marioObj->unused2 > 35)
+    {
+        level_trigger_warp(m, WARP_OP_DEATH);
+        set_mario_action(m, ACT_DISAPPEARED, 0);
+    }
+
+    return FALSE;
+}
+
+s32 act_lava_boost(struct MarioState *m) 
+{
+
+    #ifdef HARDCORE_BUN
+        return set_mario_action(m, ACT_EXPLODE_DEATH, 0);
+    #endif
+
 #ifdef RUMBLE_FEEDBACK
     if (!(m->flags & MARIO_MARIO_SOUND_PLAYED)) {
 #endif
@@ -1827,6 +1890,8 @@ s32 act_lava_boost(struct MarioState *m) {
     if (m->health < 0x100) {
         level_trigger_warp(m, WARP_OP_DEATH);
     }
+
+
 
     m->marioBodyState->eyeState = MARIO_EYES_DEAD;
 #ifdef RUMBLE_FEEDBACK

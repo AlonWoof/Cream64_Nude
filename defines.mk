@@ -2,6 +2,9 @@
 # General Defines
 # --------------------------------------
 
+# Hardcore Naked Bunny Action
+HARDCORE_BUN ?= 0
+
 # Build debug version (1 simple debug compile, 2 max debug compile)
 DEBUG ?= 0
 # Enable extended options menu by default

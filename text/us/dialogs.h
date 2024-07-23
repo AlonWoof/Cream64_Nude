@@ -490,10 +490,18 @@ Kingdom finally begins!"))
 
 //Omochao at the bridge
 DEFINE_DIALOG(DIALOG_034, 1, 6, 30, 200, _("\
-Hello there, Cream! I see\n\
-you're doing fine this morning.\n\
-I'll be your camera for\n\
-this adventure through the castle.\n\
+Oh, hello, Cream! \n\
+...\n\
+Um, why are you naked?\n\
+Is it too hot for clothes today? \n\
+Did you lose them somewhere? \n\
+I was going to be your camera... \n\
+Are you sure you want to \n\
+be seen like this?\n\
+...Ah, OK then. If you insist.\n\
+I'll make sure to capture all \n\
+your good angles! \n\
+\n\
 Just use the [C] buttons to guide\n\
 me around!\n\
 You can fly like you usually\n\
@@ -502,19 +510,7 @@ of the three jumps, a long\n\
 jump, or a wall kick. Be careful\n\
 on how far you can go.\n\
 \n\
-You also have a lot of neat\n\
-outfits you can pick from. You\n\
-need to come to a complete stop\n\
-to swap outfits. Follow the \n\
-instructions in the pause menu.\n\
-\n\
-If the DPad doesn't seem to \n\
-work, you may need to rebind \n\
-them in the Controls menu.\n\
-(Pause, then [R] Options, \n\
-Controls then remapping the \n\
-various DPad buttons.)\n\
-Most enemies, music, objects,\n\
+Most enemies, music, objects \n\
 and of course, dialog have been  \n\
 updated to fit the theme.\n\
 You'll find out more as you\n\
@@ -3098,8 +3094,13 @@ to stand on the pedals!"))
 
 // Amy Dialogue in wf
 DEFINE_DIALOG(AMY_01, 1, 5, 30, 200, _("\
-Cream, it's good to see\n\
-you! I don't supposed I can\n\
+Wow, Cream, you're naked!\n\
+Maybe I should give it a try.\n\ 
+I'd love to see Sonic try to\n\
+ignore me when I'm baring it all\n\
+in front of him, haha~!\n\
+Anyways... \n\
+I don't supposed I can\n\
 ask you a bit of a favor now,\n\
 can I?\n\
 \n\
@@ -3158,8 +3159,12 @@ I think something happened\n\
 to me, but I can't remember\n\
 anything...\n\
 \n\
-Please say yes....YOU\n\
-HAVEN'T?! Okay, that's\n\
+Whatever it was ripped my\n\
+clothes off, too... I hope\n\
+it wasn't some kind of pervert.\n\
+\n\
+Please say you found Sonic....\n\
+YOU HAVEN'T?! Ok, that's\n\
 good enough for me, I'm\n\
 getting out of here!\n\
 Have fun in this spook\n\
@@ -3172,6 +3177,11 @@ under the shade of this\n\
 building, but have you seen\n\
 what's around here? Not \n\
 taking any chances.\n\
+Well, at least the ghosts or \n\
+whatever taking my clothes\n\
+was a blessing in disguise. \n\
+I'd be cooked alive with \n\
+that dress on.\n\
 My never ending search\n\
 continues, but with no luck\n\
 here either. I assume it's\n\
@@ -3291,10 +3301,14 @@ ol' hero you!"))
 
 //Blaze, JRB
 DEFINE_DIALOG(BLAZE_01, 1, 4, 30, 200, _("\
-Cream, how good it is to\n\
-you see again. I'm sorry\n\
-to ask so suddenly, but have\n\
+Cream, how good it is to \n\
+you see again. I see you're \n\
+going \'au naturale\' today. \n\
+Don't catch a cold. \n\
+Anyways, I'm sorry to ask\n\
+so suddenly, but have\n\
 you seen Marine?\n\
+\n\
 ...Now that I think about it,\n\
 you two have never met, have\n\
 you? She's a lil' raccoon\n\
@@ -3514,12 +3528,12 @@ and enjoy the AC!"))
 
 // Tails Part 1
 DEFINE_DIALOG(MS_004, 1, 5, 30, 200, _("\
-Alright, I got the tickets,\n\
-just have to go as-WHOA!\n\
-Hey Cream! Why are you\n\
-all the way out here? Is\n\
-Amy here with you??\n\
-I wanted to go find you to\n\
+Alright I got the tickets,\n\
+just have to go as-WHOA\n\
+C-cream?!?! Are you...\n\
+Oh gosh, I can see everything...\n\
+U-um... (oh gosh... don't stare...)\n\
+W-well, umm... I wanted to \n\
 see if you wanted to go see\n\
 Chao in Space? It's back\n\
 in theaters for a short time\n\
@@ -3530,7 +3544,7 @@ being a jerk. I'm sure Sonic\n\
 is on his way to take care\n\
 of it!\n\
 In the mean time, you wanna \n\
-go watch the movie? ...Bad\n\
+g-go watch the movie? ...Bad\n\
 time to ask? Y-yeah, of \n\
 course! No need to just wait\n\
 on Sonic. Good luck, Cream!\n\
