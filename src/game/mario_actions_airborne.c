@@ -143,14 +143,16 @@ s32 check_fall_damage(struct MarioState *m, u32 hardFallAction) {
             if (fallHeight > 3000.0f) 
             {
 
+
+                m->hurtCounter += 24;
+
                 #ifdef HARDCORE_BUN
                 if(!(m->flags & MARIO_METAL_CAP))
                 { 
-                    return set_mario_action(m, ACT_EXPLODE_DEATH, 0);
+                    m->hurtCounter += 24;
                 }
                 #endif
 
-                m->hurtCounter += 24;
 #ifdef RUMBLE_FEEDBACK
                 queue_rumble_data(5, 80);
 #endif
@@ -160,16 +162,15 @@ s32 check_fall_damage(struct MarioState *m, u32 hardFallAction) {
             } else if (fallHeight > damageHeight && !mario_floor_is_slippery(m)) 
             {
 
-                
+                m->hurtCounter += 12;
+
                 #ifdef HARDCORE_BUN
                 if(!(m->flags & MARIO_METAL_CAP))
                 { 
-                    return set_mario_action(m, ACT_EXPLODE_DEATH, 0);
+                    m->hurtCounter += 12;
                 }
                 #endif
 
-
-                m->hurtCounter += 12;
                 m->squishTimer = 30;
 #ifdef RUMBLE_FEEDBACK
                 queue_rumble_data(5, 80);
@@ -1800,8 +1801,8 @@ s32 act_explode_death(struct MarioState * m)
     {
     	//m->marioObj->unused2 = 0;
         play_sound_if_no_flag(m, SOUND_MARIO_ATTACKED, MARIO_MARIO_SOUND_PLAYED);
-    	struct Object *explosion;
-		explosion = spawn_object(m->marioObj, MODEL_EXPLOSION,  bhvExplosion);
+    	//struct Object *explosion;
+		spawn_object(m->marioObj, MODEL_EXPLOSION,  bhvExplosion);
 		//explosion->oGraphYOffset += 50.0f;
     }
 

@@ -18,6 +18,7 @@
 #include "mario.h"
 #include "mario_actions_cutscene.h"
 #include "mario_actions_moving.h"
+#include "mario_actions_airborne.h"
 #include "mario_step.h"
 #include "moving_texture.h"
 #include "object_helpers.h"
@@ -3018,7 +3019,7 @@ static s32 act_end_waving_cutscene(struct MarioState *m) {
                                                     890, -670, 0, 0, 0);
 
         sEndRudeToadObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_AMY_ED, bhvEndToadAmy, 350,
-                                                    830, -270, 0, 0, 0);
+                                                    890, -270, 0, 0, 0);
 
         sEndPeachObj->oOpacity = 255;
         sEndRightToadObj->oOpacity = 255;
@@ -3126,6 +3127,7 @@ s32 mario_execute_cutscene_action(struct MarioState *m) {
         case ACT_BUTT_STUCK_IN_GROUND:       cancel = act_butt_stuck_in_ground(m);       break;
         case ACT_FEET_STUCK_IN_GROUND:       cancel = act_feet_stuck_in_ground(m);       break;
         case ACT_PUTTING_ON_CAP:             cancel = act_putting_on_cap(m);             break;
+        case ACT_EXPLODE_DEATH:              cancel = act_explode_death(m);              break;
     }
     /* clang-format on */
 

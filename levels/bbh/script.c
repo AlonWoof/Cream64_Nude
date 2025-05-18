@@ -106,6 +106,7 @@ const LevelScript level_bbh_entry[] = {
 
     LOAD_MODEL_FROM_GEO(MODEL_KINGBOO,            kingboo_geo),
     LOAD_MODEL_FROM_GEO(MODEL_AMY,                    amy_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_AMY_NUDE,                    amy_nude_geo),
 
     AREA(/*index*/ 1, geo_bbh_000F00),
         JUMP_LINK(script_func_local_1),
@@ -118,8 +119,8 @@ const LevelScript level_bbh_entry[] = {
         WARP_NODE(/*id*/ WARP_NODE_DEATH,   /*destLevel*/ LEVEL_CASTLE_COURTYARD, /*destArea*/ 1, /*destNode*/ WARP_NODE_0B, /*flags*/ WARP_NO_CHECKPOINT),
         OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 866, 796, 5350, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  1289, 80,  1005,  /*angle*/ 0, 0, 0, /*behParam*/ AMY_02 << 24, /*beh*/ bhvToadMessageAmy2,   /*acts*/ ACT_2 | ACT_3),
-        OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  1289, 80,  1005,  /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvAmyBoo,   /*acts*/ ACT_4),
-        OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  1289, 80,  1005,  /*angle*/ 0, 0, 0, /*behParam*/ AMY_03 << 24, /*beh*/ bhvToadMessageAmy7,   /*acts*/ ACT_5 | ACT_6),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_AMY_NUDE, /*pos*/  1289, 80,  1005,  /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvAmyBoo,   /*acts*/ ACT_4),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_AMY_NUDE, /*pos*/  1289, 80,  1005,  /*angle*/ 0, 0, 0, /*behParam*/ AMY_03 << 24, /*beh*/ bhvToadMessageAmy7,   /*acts*/ ACT_5 | ACT_6),
         OBJECT(/*model*/ MODEL_WISP1, /*pos*/  912,   -204,  3063, /*angle*/ 0, 179, 0, /*behParam*/ MWISP_BBH << 16, /*beh*/ bhvWisp1),
         OBJECT_WITH_ACTS(/*model*/ MODEL_GOOMBA_CREM, /*pos*/  1146,  -203, -2280, /*angle*/ 0, 0, 0, /*behParam*/ 0x000C0000, /*beh*/ bhvGoombaCrem, ACT_1),
         OBJECT_WITH_ACTS(/*model*/ MODEL_SCUTTLEBUG, /*pos*/  1146,  -203, -2280, /*angle*/ 0, 0, 0, /*behParam*/ 0x000C0000, /*beh*/ bhvScuttlebug, ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),

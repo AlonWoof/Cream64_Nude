@@ -92,7 +92,7 @@ const LevelScript level_ssl_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_SSL_PYRAMID_ELEVATOR,    ssl_geo_0007AC),
     LOAD_MODEL_FROM_GEO(MODEL_SSL_TOX_BOX,             ssl_geo_000630),
 
-    LOAD_MODEL_FROM_GEO(MODEL_AMY,                        amy_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_AMY_NUDE,                        amy_nude_geo),
 
     AREA(/*index*/ 1, ssl_geo_000648),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/   653, 1038,  6566, /*angle*/ 0,  90, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvSpinAirborneWarp),
@@ -102,7 +102,7 @@ const LevelScript level_ssl_entry[] = {
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -5943,    0, -4903, /*angle*/ 0,  49, 0, /*bhvParam*/ BPARAM2(WARP_NODE_20), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 453, 1038,  6566, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         OBJECT(/*model*/ MODEL_WISP1, /*pos*/  439,   0,  6321, /*angle*/ 0, 0, 0, /*behParam*/ MWISP_SSL << 16, /*beh*/ bhvWisp1),
-        OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  6540, 694,  3059,  /*angle*/ 0, 270, 0, /*behParam*/ AMY_04 << 24, /*beh*/ bhvToadMessageAmy4,   /*acts*/ ACT_4 | ACT_5),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_AMY_NUDE, /*pos*/  6540, 694,  3059,  /*angle*/ 0, 270, 0, /*behParam*/ AMY_04 << 24, /*beh*/ bhvToadMessageAmy4,   /*acts*/ ACT_4 | ACT_5),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_SSL,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_14,      /*destLevel*/ LEVEL_SSL,    /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_1E,      /*destLevel*/ LEVEL_SSL,    /*destArea*/ 2, /*destNode*/ WARP_NODE_14, /*flags*/ WARP_CHECKPOINT),

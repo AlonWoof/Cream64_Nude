@@ -3,14 +3,14 @@
 # --------------------------------------
 
 # Hardcore Naked Bunny Action
-HARDCORE_BUN ?= 0
+HARDCORE_BUN ?= 1
 
 # Build debug version (1 simple debug compile, 2 max debug compile)
-DEBUG ?= 0
+DEBUG ?= 1
 # Enable extended options menu by default
 EXT_OPTIONS_MENU ?= 1
 # Enable debug options menu (Enabled if DEBUG is not 0)
-EXT_DEBUG_MENU ?= 0
+EXT_DEBUG_MENU ?= 1
 # Enable better camera (Puppycam 2)
 BETTERCAMERA ?= 1
 # Enable cheats
@@ -46,13 +46,13 @@ QOL_REDONE ?= 1
 # --------------------------------------
 
 # Enable 60 fps interpolation
-HIGH_FPS_PC ?= 0
+HIGH_FPS_PC ?= 1
 # Disable text-based save-files by default
 TEXTSAVES ?= 0
 # Load resources from external files
 EXTERNAL_DATA ?= 0
 # Enable Discord Rich Presence
-DISCORDRPC ?= 0
+DISCORDRPC ?= 1
 # Enable Command Line Options
 COMMAND_LINE_OPTIONS ?= 1
 
@@ -132,6 +132,12 @@ ifneq ($(DEBUG),0)
   CUSTOM_C_DEFINES += -DDEBUG
   EXT_DEBUG_MENU := 1
 endif
+
+# Check for hard mode
+ifeq ($(HARDCORE_BUN),1)
+  CUSTOM_C_DEFINES += -DHARDCORE_BUN
+endif
+
 
 # Check for Debug Menu option
 ifeq ($(EXT_DEBUG_MENU),1)

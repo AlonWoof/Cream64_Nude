@@ -671,14 +671,14 @@ s32 act_ledge_grab(struct MarioState *m) {
     if (m->input & INPUT_STOMPED) {
         if (m->marioObj->oInteractStatus & INT_STATUS_MARIO_KNOCKBACK_DMG) 
         {
-            #ifdef HARDCORE_BUN
-                if(!(m->flags & MARIO_METAL_CAP))
-                { 
-                    return set_mario_action(m, ACT_EXPLODE_DEATH, 0);
-                }
+
+            #ifndef HARDCORE_BUN
+                m->hurtCounter += (m->flags & MARIO_CAP_ON_HEAD) ? 12 : 18;
             #endif
 
-            m->hurtCounter += (m->flags & MARIO_CAP_ON_HEAD) ? 12 : 18;
+            #ifdef HARDCORE_BUN
+                m->hurtCounter += 24;
+            #endif
         }
         return let_go_of_ledge(m);
     }

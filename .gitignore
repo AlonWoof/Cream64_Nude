@@ -89,3 +89,4 @@ platform/android/android/lib/*/libc++_shared.so
 # macOS autocreated directory settings file 
 .DS_Store
 Cream64_Nude.code-workspace
+*.bak
