@@ -11,6 +11,7 @@
 
 #include "levels/scripts.h"
 
+#include "actors/common0.h"
 #include "actors/common1.h"
 #include "actors/group10.h"
 
@@ -193,9 +194,11 @@ const LevelScript level_castle_grounds_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_KATALINA_ED,                 katalina_ed_geo),
     LOAD_MODEL_FROM_GEO(MODEL_AMY_ED,                      amy_ed_geo),
     LOAD_MODEL_FROM_GEO(MODEL_TAILS_ED,                    tails_ed_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_YUME,                        yume_geo),
     
     AREA(/*index*/ 1, castle_grounds_geo_00073C),
         WARP_NODE(/*id*/ WARP_NODE_DEATH, /*destLevel*/ LEVEL_CASTLE_GROUNDS, /*destArea*/ 1, /*destNode*/ WARP_NODE_03, /*flags*/ WARP_NO_CHECKPOINT),
+        //OBJECT(MODEL_YUME, -2257, 260,  4192, 0, 90, 0,  YUME0 << 24, bhvToadMessageYume0),
         OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 0, 0, 0, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         JUMP_LINK(script_func_local_1),
         JUMP_LINK(script_func_local_2),

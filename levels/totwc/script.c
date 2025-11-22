@@ -53,7 +53,7 @@ const LevelScript level_totwc_entry[] = {
 		OBJECT(MODEL_BULLYK, 1102, -2749, 1923, 0, 0, 0, 0x00000000, bhvSmallBullyK),
 		OBJECT(MODEL_BULLYK, 110, -2645, 526, 0, 0, 0, 0x00000000, bhvSmallBullyK),
 		OBJECT(MODEL_CHARMY, 3723, 2174, 621, 3, -32, -2, DIALOG_126 << 24, bhvToadMessageCharmy),
-		OBJECT(MODEL_CHEESE_FOLLOW, -7733, -238, 5818, 0, -19, 0, MWISP_WP << 16, bhvCheeseFollow),
+		OBJECT(MODEL_CHEESE_FOLLOW, -7733, -238, 5818, 0, -19, 0, 0, bhvCheeseFollow),
 		OBJECT(MODEL_RED_FLAME, -8125, 72, 6861, 0, 0, 0, 0x00000000, bhvFlame),
 		OBJECT(MODEL_RED_FLAME, -219, 2806, -3346, 0, 0, 0, 0x00000000, bhvFlame),
 		OBJECT(MODEL_RED_FLAME, 1640, 2806, -3346, 0, 0, 0, 0x00000000, bhvFlame),

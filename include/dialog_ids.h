@@ -234,7 +234,7 @@ enum DialogID {
     KB_SF3, 
     KB_MRDO, 
     KB_MAPPY, // 230
-    MWISP_KB, 
+    YUME0, 
     WP_000,
     WP_001, 
     WP_002,

@@ -640,6 +640,7 @@ extern const BehaviorScript bhvToadMessageMarine[];
 extern const BehaviorScript bhvToadMessageMarine2[];
 extern const BehaviorScript bhvToadMessageMarine3[];
 extern const BehaviorScript bhvToadMessageTails1[];
+extern const BehaviorScript bhvToadMessageYume0[];
 extern const BehaviorScript bhvWarpRing[];
 extern const BehaviorScript bhvToadMessageGoombaMarine[];
 extern const BehaviorScript bhvToadMessageNormal[];

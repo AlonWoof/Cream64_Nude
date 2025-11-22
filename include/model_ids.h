@@ -45,6 +45,7 @@
 
 #define MODEL_AMY_NUDE                    0x100         // amy_nude_geo
 #define MODEL_CREAM_CLOTHED               0x101         // cream_clothed_geo
+#define MODEL_YUME                        0x102         // cream_clothed_geo
 
 // Fish Models
 

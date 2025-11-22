@@ -3930,11 +3930,15 @@ though. Maybe cause I'm just bad \n\
 at it. Stupid cute kitties...~"))
 
 //Wisp, Karaoke Bar
-DEFINE_DIALOG(MWISP_KB, 1, 4, 30, 200, _("\
-Music used:\n\
--Dudley's Theme-\n\
-Street Fighter 3:\n\
-A New Generation"))
+DEFINE_DIALOG(YUME0, 1, 4, 30, 200, _("\
+Usagi-chan...\n\
+Don't mind me.\n\
+I'm just keeping watch\n\
+over your big sis.\n\
+\n\
+Good luck saving your mom!\n\
+Ganbatte, ne?"))
+
 
 //Tails Part 2
 DEFINE_DIALOG(WP_000, 1, 4, 30, 200, _("\

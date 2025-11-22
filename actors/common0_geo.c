@@ -39,3 +39,4 @@
 #include "goomba_marine/geo.inc.c"
 #include "goomba_crem/geo.inc.c"
 #include "amy_nude/geo.inc.c"
+#include "yume/geo.inc.c"

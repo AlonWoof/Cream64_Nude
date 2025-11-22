@@ -79,6 +79,7 @@ static const LevelScript script_func_local_3[] = {
     OBJECT_WITH_ACTS(/*model*/ MODEL_WF_TOWER_DOOR,     /*pos*/  -511, 3584,     0, /*angle*/ 0,    0, 0, /*bhvParam*/ 0, /*bhv*/ bhvTowerDoor,                /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
     OBJECT_WITH_ACTS(/*model*/ MODEL_LAYLA,      /*pos*/ -1700, 1140,  3500, /*angle*/ 0,    0, 0, /*bhvParam*/ 0, /*bhv*/ bhvBobombBuddyOpensCannon, /*acts*/ ACT_3 | ACT_4 | ACT_5 | ACT_6),
     OBJECT_WITH_ACTS(/*model*/ MODEL_HOOT,              /*pos*/  2560,  700,  4608, /*angle*/ 0,    0, 0, /*bhvParam*/ 0, /*bhv*/ bhvHoot,                      /*acts*/ ACT_3 | ACT_4 | ACT_5 | ACT_6),
+    OBJECT          (MODEL_YUME,                                 2109, 2560,  2812,           0,    45,                0,  YUME0 << 24, bhvToadMessageYume0),
     RETURN(),
 };
 
@@ -142,6 +143,7 @@ const LevelScript level_wf_entry[] = {
 
     LOAD_MODEL_FROM_GEO(MODEL_LAYLA,         layla_geo),
     LOAD_MODEL_FROM_GEO(MODEL_AMY,           amy_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_YUME,           yume_geo),
 
 
     AREA(/*index*/ 1, wf_geo_000BF8),

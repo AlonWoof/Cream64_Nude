@@ -194,8 +194,18 @@ void alon_cheat_99_rings()
 
 }
 
+
+void alon_debug_update()
+{
+	if(gPlayer1Controller->buttonPressed & R_TRIG)
+	{
+		printf("X: %f Y: %f Z: %f\n", gMarioState->marioObj->header.gfx.pos[0], gMarioState->marioObj->header.gfx.pos[1], gMarioState->marioObj->header.gfx.pos[2]);
+	}
+}
+
 void alon_cheats_update()
 {
 	alon_cheat_99_rings();
+	alon_debug_update();
 
 }
